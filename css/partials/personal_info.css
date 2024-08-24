@@ -1,0 +1,25 @@
+.personal-info-image {
+  width: 80%;
+  padding-left: 20%;
+}
+.personal-info-img {
+  display: block;
+  width: 120px;
+  border-radius: 60px;
+  margin: 0 auto;
+}
+.personal-info-link {
+  width: 80%;
+  padding-left: 20%;
+  margin-top: 20px;
+}
+.personal-info-link-list {
+  width: 120px;
+  margin: 0 auto;
+}
+.personal-info-link-list li {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  padding-left: 25px;
+}

@@ -1,6 +1,12 @@
 .flex-container {
+  position: relative;
   width: 720px;
   margin: 0 auto;
+}
+.personal-info {
+  position: absolute;
+  width: calc((100vw - 720px) / 2);
+  left: calc((720px - 100vw) / 2);
 }
 html {
   font-size: 18px;
@@ -12,6 +18,10 @@ html {
   .flex-container {
     width: 720px;
   }
+  .personal-info {
+    width: calc((100vw - 720px) / 2);
+    left: calc((720px - 100vw) / 2);
+  }
 }
 @media (max-width: 1200px) {
   html {
@@ -19,6 +29,15 @@ html {
   }
   .flex-container {
     width: 640px;
+  }
+  .personal-info {
+    width: calc((100vw - 640px) / 2);
+    left: calc((640px - 100vw) / 2);
+  }
+}
+@media (max-width: 1100px) {
+  .personal-info {
+    display: none;
   }
 }
 @media (max-width: 688px) {
