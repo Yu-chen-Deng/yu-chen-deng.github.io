@@ -2,8 +2,16 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2024/08/18/hello-world/</url>
+    <url>/20240818/hello-world/</url>
     <content><![CDATA[<p>Start from here.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Example</title>
+    <url>/20240820/example/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>project</category>
+      </categories>
   </entry>
 </search>
