@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>LAPIG</title>
+  <title>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -35,6 +35,35 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    .gradient-text {
+      /* 字体大小 */
+      font-weight: bold;
+      white-space: nowrap;
+      /* 防止文本换行 */
+      background: linear-gradient(90deg,
+          #ff595e, #ff924c, #ffca3a, #c5ca30,
+          #8ac926, #52a675, #1982c4, #4267ac,
+          #6a4c93, #ff595e, #ff924c);
+      background-size: 1200% 100%;
+      /* 扩大渐变背景尺寸以形成环形 */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: seamlessScroll 6s linear infinite;
+      /* 让渐变持续滚动 */
+    }
+
+    @keyframes seamlessScroll {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -52,12 +81,28 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">LAPIG</h1>
+            <h1 class="title is-1 publication-title">LAPIG: Language Guided Projector Image Generation with Surface
+              Adaptation and <div class="gradient-text">Stylization</div>
+            </h1>
+            <h3 class="title is-5 publication-title">IEEE VR 2025 / IEEE TVCG</h3>
             <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yuchendeng.com/" target="_blank">Yuchen Deng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www3.cs.stonybrook.edu/~hling/" target="_blank">Haibin Ling</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://bingyaohuang.github.io/" target="_blank">Bingyao Huang</a><sup>1*</sup>
+              </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              To appear
+              <span class="author-block">
+                <sup>1</sup>Southwest University
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>2</sup>Stony Brook University
+              </span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates the corresponding author</small></span>
             </div>
 
             <div class="column has-text-centered">
@@ -69,7 +114,7 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper (To appear)</span>
+                    <span>Paper</span>
                   </a>
                 </span>
 
@@ -80,7 +125,7 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Supplementary (To appear)</span>
+                    <span>Supplementary</span>
                   </a>
                 </span>
 
@@ -91,7 +136,7 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code (To appear)</span>
+                    <span>Code</span>
                   </a>
                 </span>
 
@@ -102,7 +147,7 @@
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv (To appear)</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
               </div>
@@ -120,7 +165,9 @@
       <div class="hero-body">
         <video poster="" id="tree" autoplay controls muted loop height="100%">
           <!-- Your video here -->
-          <source src="static/videos/banner_video.mp4" type="video/mp4">
+          <source src="static/videos/LAPIG_supply_1080p_compressed.mp4" type="video/mp4">
+          <track src="static/videos/LAPIG_supply_1080p_compressed.vtt" kind="subtitles" srclang="en" label="English"
+            default>
         </video>
         <!-- <h2 class="subtitle has-text-centered">
           Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat
@@ -139,7 +186,21 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              To appear To appear To appear
+              We propose LAPIG, a language guided projector image generation method with surface adaptation and
+              stylization. LAPIG consists of a projector-camera system and a target textured projection surface. LAPIG
+              takes the user text prompt as input and aims to transform the surface style using the projector.
+              LAPIG's key challenge is that due to the projector's physical brightness limitation and the surface
+              texture, the viewer's perceived projection may suffer from color saturation and artifacts in both dark and
+              bright regions, such that even with the state-of-the-art projector compensation techniques, the viewer may
+              see clear surface texture-related artifacts. Therefore, how to generate a projector image that follows the
+              user's instruction while also displaying minimum surface artifacts is an open problem.
+              To address this issue, we propose projection surface adaptation (PSA) that can generate compensable
+              surface stylization. We first train two networks to simulate the projector compensation and
+              project-and-capture processes, this allows us to find a satisfactory projector image without real
+              project-and-capture and utilize gradient descent for fast convergence. Then, we design content and
+              saturation losses to guide the projector image generation, such that the generated image shows no clearly
+              perceivable artifacts when projected. Finally, the generated image is projected for visually pleasing
+              surface style morphing effects.
             </p>
           </div>
         </div>
@@ -258,7 +319,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>To appear</code></pre>
+      <pre><code>BibTex Code Here</code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
