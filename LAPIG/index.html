@@ -68,9 +68,14 @@
       color: hsl(204, 84%, 62%) !important;
     }
 
+    .black-text {
+      color: hsl(0, 0%, 0%) !important;
+    }
+
     .zoom-component {
       display: inline-block;
       width: 100%;
+      margin-bottom: 2rem;
     }
 
     .grid-container {
@@ -261,7 +266,7 @@
             <img src="static/images/pipeline.png" alt="pipeline" />
             <h2 class="top-bottom-margin-20px subtitle has-text-centered">
               System overview of our <strong>LAPIG</strong>. <strong>(a)</strong> System setup consists of a projector, a camera, and a textured surface.
-              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
@@ -278,14 +283,14 @@
                   <mo>^</mo>
                 </mover>
               </math>.
-              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
             <img src="static/images/dataset.png" alt="dataset" />
             <h2 class="top-bottom-margin-20px subtitle has-text-centered">
               Real and synthetic dataset.
-              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
             </h2>
           </div>
         </div>
@@ -298,7 +303,12 @@
     <div class="hero-body has-text-centered">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Projection Surface Adaptation (PSA)</h2>
-        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">"reimagine with the delicate brushstrokes of John Singer Sargent"</span>
+        
+        <p>The following examples are from our paper. <span class="blue-text" style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe them.</p>
+
+        <p>&nbsp;</p>
+
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"reimagine with the delicate brushstrokes of John Singer Sargent"&nbsp;</span>
         </h2>
         <div class="zoom-component">
           <div class="grid-container">
@@ -333,12 +343,139 @@
 
             <!-- 文本区域 -->
             <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/&nbsp; PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/&nbsp; PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/o PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6">(w/o PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
           </div>
         </div>
+
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"convert into the expressive, gestural strokes of Abstract Expressionism"&nbsp;</span>
+        </h2>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/PSA/flower2-surface.jpg" alt="Surface">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/PSA/flower2-style-w-PSA.jpg" alt="StylizedWithPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/PSA/flower2-real-w-PSA.jpg" alt="withPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/PSA/flower2-style-wo-PSA.jpg" alt="StylizedWithoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/PSA/flower2-real-wo-PSA.jpg" alt="withoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+          </div>
+        </div>
+
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the dark, emotional intensity of Edvard Munch"&nbsp;</span>
+        </h2>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/PSA/spray-surface.jpg" alt="Surface">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/PSA/spray-style-w-PSA.jpg" alt="StylizedWithPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/PSA/spray-real-w-PSA.jpg" alt="withPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/PSA/spray-style-wo-PSA.jpg" alt="StylizedWithoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/PSA/spray-real-wo-PSA.jpg" alt="withoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+          </div>
+        </div>
+
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the dark, emotional intensity of Edvard Munch"&nbsp;</span>
+        </h2>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/PSA/cloud-surface.jpg" alt="Surface">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/PSA/cloud-style-w-PSA.jpg" alt="StylizedWithPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/PSA/cloud-real-w-PSA.jpg" alt="withPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/PSA/cloud-style-wo-PSA.jpg" alt="StylizedWithoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/PSA/cloud-real-wo-PSA.jpg" alt="withoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
