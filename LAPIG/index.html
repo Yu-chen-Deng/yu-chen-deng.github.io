@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Projector-camera systems, projection mapping, style transfer, projector compensation.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -63,6 +63,58 @@
         background-position: 100% 50%;
       }
     }
+
+    .blue-text {
+      color: hsl(204, 84%, 62%) !important;
+    }
+
+    .zoom-component {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .image-box {
+      position: relative;
+      aspect-ratio: 1/1;
+      cursor: crosshair;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .zoom-cursor {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      pointer-events: none;
+      display: none;
+    }
+
+    .text-row {
+      text-align: center;
+      padding: 0 0;
+    }
+
+    .zoom-preview {
+      background: #f0f0f0;
+      background-size: 500% 500%;
+    }
+
+    .placeholder {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="#ddd"/></svg>');
+    }
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -71,6 +123,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
 </head>
 
 <body>
@@ -114,7 +167,7 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Paper (Coming Soon)</span>
                   </a>
                 </span>
 
@@ -125,13 +178,13 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Supplementary</span>
+                    <span>Supplementary (Coming Soon)</span>
                   </a>
                 </span>
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                  <a href="https://github.com/Yu-chen-Deng/LAPIG" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -147,7 +200,7 @@
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv</span>
+                    <span>arXiv (Coming Soon)</span>
                   </a>
                 </span>
               </div>
@@ -186,23 +239,12 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose LAPIG, a language guided projector image generation method with surface adaptation and
-              stylization. LAPIG consists of a projector-camera system and a target textured projection surface. LAPIG
-              takes the user text prompt as input and aims to transform the surface style using the projector.
-              LAPIG's key challenge is that due to the projector's physical brightness limitation and the surface
-              texture, the viewer's perceived projection may suffer from color saturation and artifacts in both dark and
-              bright regions, such that even with the state-of-the-art projector compensation techniques, the viewer may
-              see clear surface texture-related artifacts. Therefore, how to generate a projector image that follows the
-              user's instruction while also displaying minimum surface artifacts is an open problem.
-              To address this issue, we propose projection surface adaptation (PSA) that can generate compensable
-              surface stylization. We first train two networks to simulate the projector compensation and
-              project-and-capture processes, this allows us to find a satisfactory projector image without real
-              project-and-capture and utilize gradient descent for fast convergence. Then, we design content and
-              saturation losses to guide the projector image generation, such that the generated image shows no clearly
-              perceivable artifacts when projected. Finally, the generated image is projected for visually pleasing
-              surface style morphing effects.
+              We propose LAPIG, a language guided projector image generation method with surface adaptation and stylization. LAPIG consists of a projector-camera system and a target textured projection surface. LAPIG takes the user text prompt as input and aims to transform the surface style using the projector. LAPIG's key challenge is that due to the projector's physical brightness limitation and the surface texture, the viewer's perceived projection may suffer from color saturation and artifacts in both dark and bright regions, such that even with the state-of-the-art projector compensation techniques, the viewer may see clear surface texture-related artifacts. Therefore, how to generate a projector image that follows the user's instruction while also displaying minimum surface artifacts is an open problem. To address this issue, we propose projection surface adaptation (PSA) that can generate compensable surface stylization. We first train two networks to simulate the projector compensation and project-and-capture processes, this allows us to find a satisfactory projector image without real project-and-capture and utilize gradient descent for fast convergence. Then, we design content and saturation losses to guide the projector image generation, such that the generated image shows no clearly perceivable artifacts when projected. Finally, the generated image is projected for visually pleasing surface style morphing effects.
             </p>
           </div>
+          <h5>
+            <em><b>See <a href="#PSA" class="blue-text">below</a> for <a href="#PSA" class="blue-text">PSA results</a>.</b></em>
+          </h5>
         </div>
       </div>
     </div>
@@ -211,43 +253,95 @@
 
 
   <!-- Image carousel -->
-  <!-- <section class="hero is-small">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              First image description.
+            <img src="static/images/pipeline.png" alt="pipeline" />
+            <h2 class="top-bottom-margin-20px subtitle has-text-centered">
+              System overview of our <strong>LAPIG</strong>. <strong>(a)</strong> System setup consists of a projector, a camera, and a textured surface.
+              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Second image description.
+            <img src="static/images/architecture.png" alt="architecture" />
+            <h2 class="top-bottom-margin-20px subtitle has-text-centered">
+              Network architecture of projector compensation model <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msup>
+                  <mi>π</mi>
+                  <mo>†</mo>
+                </msup>
+              </math> and project-and-capture simulation model <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mover>
+                  <mi>π</mi>
+                  <mo>^</mo>
+                </mover>
+              </math>.
+              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Third image description.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Fourth image description.
+            <img src="static/images/dataset.png" alt="dataset" />
+            <h2 class="top-bottom-margin-20px subtitle has-text-centered">
+              Real and synthetic dataset.
+              <br><strong>More information is presented in <a href="#additional" class="blue-text">our paper</a>.</strong>
             </h2>
           </div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- End image carousel -->
 
+  <section class="section hero is-white" id="PSA">
+    <div class="hero-body has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Projection Surface Adaptation (PSA)</h2>
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">"reimagine with the delicate brushstrokes of John Singer Sargent"</span>
+        </h2>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/PSA/flower-surface.jpg" alt="Surface">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/PSA/flower-style-w-PSA.jpg" alt="StylizedWithPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/PSA/flower-real-w-PSA.jpg" alt="withPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/PSA/flower-style-wo-PSA.jpg" alt="StylizedWithoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/PSA/flower-real-wo-PSA.jpg" alt="withoutPSA">
+              <div class="zoom-cursor"></div>
+            </div>
 
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
-
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/&nbsp; PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/&nbsp; PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="margin-bottom: 0.5rem;">(w/o PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6">(w/o PSA)</h2></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Youtube video -->
   <!-- <section class="hero is-small is-light">
     <div class="hero-body">
@@ -266,7 +360,6 @@
     </div>
   </section> -->
   <!-- End youtube video -->
-
 
   <!-- Video carousel -->
   <!-- <section class="hero is-small">
@@ -319,7 +412,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+<pre><code>@ARTICLE{deng2025LAPIG,
+  author  = {Deng, Yuchen and Ling, Haibin and Huang, Bingyao},
+  journal = {},
+  title   = {LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization},
+  year    = {2025},
+}</code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
@@ -351,8 +449,66 @@
 
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1FHRENB96"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N1FHRENB96');
+  </script>
   <!-- End of Statcounter Code -->
 
+  <script>
+    document.querySelectorAll('.zoom-component').forEach(component => {
+      const boxes = component.querySelectorAll('.image-box[data-index]');
+      const previews = component.querySelectorAll('.zoom-preview');
+      let isHovering = false;
+
+      boxes.forEach(box => {
+        box.addEventListener('mouseenter', () => {
+          isHovering = true;
+          component.querySelectorAll('.zoom-cursor').forEach(c => c.style.display = 'block');
+        });
+
+        box.addEventListener('mousemove', (e) => {
+          if (!isHovering) return;
+          
+          // 获取当前悬停盒子的尺寸和位置
+          const rect = e.target.getBoundingClientRect();
+          const xPercent = (e.clientX - rect.left) / rect.width;
+          const yPercent = (e.clientY - rect.top) / rect.height;
+
+          // 更新所有光标位置
+          boxes.forEach(b => {
+            const cursor = b.querySelector('.zoom-cursor');
+            cursor.style.left = `${xPercent * 100 - 10}%`;
+            cursor.style.top = `${yPercent * 100 - 10}%`;
+          });
+
+          // 同时更新所有预览区域
+          boxes.forEach((b, index) => {
+            const preview = component.querySelector(`[data-preview="${index}"]`);
+            const imgSrc = b.querySelector('img').src;
+            
+            preview.style.backgroundImage = `url(${imgSrc})`;
+            preview.classList.remove('placeholder');
+            preview.style.backgroundPosition =
+              `${xPercent * 100}% ${yPercent * 100}%`;
+          });
+        });
+
+        box.addEventListener('mouseleave', () => {
+          isHovering = false;
+          component.querySelectorAll('.zoom-cursor').forEach(c => c.style.display = 'none');
+          previews.forEach(p => {
+            p.style.backgroundImage = '';
+            p.classList.add('placeholder');
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
