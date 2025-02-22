@@ -85,10 +85,34 @@
       justify-content: center;
     }
 
+    .video-grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-content: center;
+    }
+
     .image-box {
       position: relative;
       aspect-ratio: 1/1;
       cursor: crosshair;
+    }
+
+    .video-box {
+      position: relative;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-box img {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 25%;
     }
 
     .image-box img {
@@ -303,7 +327,7 @@
     <div class="hero-body has-text-centered">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Projection Surface Adaptation (PSA)</h2>
-        
+
         <p>The following examples are from our paper. <span class="blue-text" style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe them.</p>
 
         <p>&nbsp;</p>
@@ -342,11 +366,11 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
           </div>
         </div>
 
@@ -384,11 +408,11 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
           </div>
         </div>
 
@@ -426,11 +450,11 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
           </div>
         </div>
 
@@ -468,14 +492,59 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-white" id="PSA">
+    <div class="hero-body has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Visualization of Our Work</h2>
+
+        <div class="zoom-component">
+          <div class="video-grid-container">
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it California style"&nbsp;</span></h2>
+            <div class="video-box" data-index="0">
+              <video id="video1" autoplay loop muted>
+                <source src="static/PSA/video/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <div class="video-box" data-index="1">
+              <video id="video2" autoplay loop muted>
+                <source src="static/PSA/video/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it Van Goph style"&nbsp;</span></h2>
+            <div class="video-box" data-index="2">
+              <video id="video3" autoplay loop muted>
+                <source src="static/PSA/video/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <div class="video-box" data-index="3">
+              <video id="video4" autoplay loop muted>
+                <source src="static/PSA/video/video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface2.jpg" alt="surface2">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -549,9 +618,9 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-<pre><code>@ARTICLE{deng2025LAPIG,
+<pre><code>@ARTICLE{Deng2025LAPIG,
   author  = {Deng, Yuchen and Ling, Haibin and Huang, Bingyao},
-  journal = {},
+  journal = {IEEE Transactions on Visualization and Computer Graphics},
   title   = {LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization},
   year    = {2025},
 }</code></pre>
@@ -645,6 +714,28 @@
         });
       });
     });
+  </script>
+  <script>
+    window.onload = function() {
+      const videos = document.querySelectorAll('video');
+
+      // 确保所有视频在加载时是同步的
+      videos.forEach(video => {
+        video.addEventListener('play', function() {
+          videos.forEach(otherVideo => {
+            if (otherVideo !== video && otherVideo.paused) {
+              otherVideo.play();  // 如果其他视频暂停，开始播放
+            }
+          });
+        });
+
+        // 在视频结束时自动循环播放
+        video.addEventListener('ended', function() {
+          video.currentTime = 0;  // 重置到视频开头
+          video.play();  // 重新播放
+        });
+      });
+    };
   </script>
 </body>
 
