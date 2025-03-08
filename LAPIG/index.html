@@ -126,7 +126,7 @@
       width: 20%;
       height: 20%;
       border: 2px solid #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       pointer-events: none;
       display: none;
     }
@@ -194,23 +194,23 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                  <a href="../pub/LAPIG/LAPIG.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper (Coming Soon)</span>
+                    <span>Paper</span>
                   </a>
                 </span>
 
                 <!-- Supplementary PDF link -->
                 <span class="link-block">
-                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                  <a href="../pub/LAPIG/LAPIG_supply.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Supplementary (Coming Soon)</span>
+                    <span>Supplementary</span>
                   </a>
                 </span>
 
@@ -226,15 +226,15 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv (Coming Soon)</span>
+                    <span>arXiv</span>
                   </a>
-                </span>
+                </span> -->
               </div>
             </div>
           </div>
@@ -271,18 +271,31 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose LAPIG, a language guided projector image generation method with surface adaptation and stylization. LAPIG consists of a projector-camera system and a target textured projection surface. LAPIG takes the user text prompt as input and aims to transform the surface style using the projector. LAPIG's key challenge is that due to the projector's physical brightness limitation and the surface texture, the viewer's perceived projection may suffer from color saturation and artifacts in both dark and bright regions, such that even with the state-of-the-art projector compensation techniques, the viewer may see clear surface texture-related artifacts. Therefore, how to generate a projector image that follows the user's instruction while also displaying minimum surface artifacts is an open problem. To address this issue, we propose projection surface adaptation (PSA) that can generate compensable surface stylization. We first train two networks to simulate the projector compensation and project-and-capture processes, this allows us to find a satisfactory projector image without real project-and-capture and utilize gradient descent for fast convergence. Then, we design content and saturation losses to guide the projector image generation, such that the generated image shows no clearly perceivable artifacts when projected. Finally, the generated image is projected for visually pleasing surface style morphing effects.
+              We propose LAPIG, a language guided projector image generation method with surface adaptation and
+              stylization. LAPIG consists of a projector-camera system and a target textured projection surface. LAPIG
+              takes the user text prompt as input and aims to transform the surface style using the projector. LAPIG's
+              key challenge is that due to the projector's physical brightness limitation and the surface texture, the
+              viewer's perceived projection may suffer from color saturation and artifacts in both dark and bright
+              regions, such that even with the state-of-the-art projector compensation techniques, the viewer may see
+              clear surface texture-related artifacts. Therefore, how to generate a projector image that follows the
+              user's instruction while also displaying minimum surface artifacts is an open problem. To address this
+              issue, we propose projection surface adaptation (PSA) that can generate compensable surface stylization.
+              We first train two networks to simulate the projector compensation and project-and-capture processes, this
+              allows us to find a satisfactory projector image without real project-and-capture and utilize gradient
+              descent for fast convergence. Then, we design content and saturation losses to guide the projector image
+              generation, such that the generated image shows no clearly perceivable artifacts when projected. Finally,
+              the generated image is projected for visually pleasing surface style morphing effects.
             </p>
           </div>
           <h5>
-            <em><b>See <a href="#PSA" class="blue-text">below</a> for <a href="#PSA" class="blue-text">PSA results</a>.</b></em>
+            <em><b>See <a href="#PSA" class="blue-text">below</a> for <a href="#PSA" class="blue-text">PSA
+                  results</a>.</b></em>
           </h5>
         </div>
       </div>
     </div>
   </section>
   <!-- End paper abstract -->
-
 
   <!-- Image carousel -->
   <section class="hero is-small">
@@ -292,8 +305,10 @@
           <div class="item">
             <img src="static/images/pipeline.png" alt="pipeline" />
             <h2 class="top-bottom-margin-20px subtitle has-text-centered">
-              System overview of our <strong>LAPIG</strong>. <strong>(a)</strong> System setup consists of a projector, a camera, and a textured surface.
-              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
+              System overview of our <strong>LAPIG</strong>. <strong>(a)</strong> System setup consists of a projector,
+              a camera, and a textured surface.
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our
+                  paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
@@ -310,14 +325,16 @@
                   <mo>^</mo>
                 </mover>
               </math>.
-              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our
+                  paper</a>.</strong>
             </h2>
           </div>
           <div class="item">
             <img src="static/images/dataset.png" alt="dataset" />
             <h2 class="top-bottom-margin-20px subtitle has-text-centered">
               Real and synthetic dataset.
-              <br><strong>More information is presented in <a href="#additional" class="black-text">our paper</a>.</strong>
+              <br><strong>More information is presented in <a href="#additional" class="black-text">our
+                  paper</a>.</strong>
             </h2>
           </div>
         </div>
@@ -329,13 +346,65 @@
   <section class="section hero is-white" id="PSA">
     <div class="hero-body has-text-centered">
       <div class="container is-max-desktop">
+        <h2 class="title is-3">Visualization of Our Work</h2>
+
+        <div class="zoom-component">
+          <div class="video-grid-container">
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span
+                style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span
+                style="border: 1px solid black;">&nbsp;"make it California style"&nbsp;</span></h2>
+            <div class="video-box" data-index="0">
+              <video id="video1" autoplay loop muted>
+                <source src="static/PSA/video/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <div class="video-box" data-index="1">
+              <video id="video2" autoplay loop muted>
+                <source src="static/PSA/video/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span
+                style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
+            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span
+                style="border: 1px solid black;">&nbsp;"make it Van Goph style"&nbsp;</span></h2>
+            <div class="video-box" data-index="2">
+              <video id="video3" autoplay loop muted>
+                <source src="static/PSA/video/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface1.jpg" alt="surface1">
+            </div>
+            <div class="video-box" data-index="3">
+              <video id="video4" autoplay loop muted>
+                <source src="static/PSA/video/video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="static/PSA/video/surface2.jpg" alt="surface2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-white" id="PSA">
+    <div class="hero-body has-text-centered">
+      <div class="container is-max-desktop">
         <h2 class="title is-3">Projection Surface Adaptation (PSA)</h2>
 
-        <p>The following examples are from our paper. <span class="blue-text" style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe them.</p>
+        <p>The following examples are from our paper. <span class="blue-text"
+            style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe
+          them.</p>
 
         <p>&nbsp;</p>
 
-        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"reimagine with the delicate brushstrokes of John Singer Sargent"&nbsp;</span>
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"reimagine with the
+            delicate brushstrokes of John Singer Sargent"&nbsp;</span>
         </h2>
         <div class="zoom-component">
           <div class="grid-container">
@@ -369,15 +438,30 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/o</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
           </div>
         </div>
 
-        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"convert into the expressive, gestural strokes of Abstract Expressionism"&nbsp;</span>
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"convert into the
+            expressive, gestural strokes of Abstract Expressionism"&nbsp;</span>
         </h2>
         <div class="zoom-component">
           <div class="grid-container">
@@ -411,15 +495,30 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/o</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
           </div>
         </div>
 
-        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the dark, emotional intensity of Edvard Munch"&nbsp;</span>
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the
+            dark, emotional intensity of Edvard Munch"&nbsp;</span>
         </h2>
         <div class="zoom-component">
           <div class="grid-container">
@@ -453,15 +552,30 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/o</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
           </div>
         </div>
 
-        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the dark, emotional intensity of Edvard Munch"&nbsp;</span>
+        <h2 class="title is-6">User input text prompt: <span style="border: 1px solid black;">&nbsp;"paint with the
+            dark, emotional intensity of Edvard Munch"&nbsp;</span>
         </h2>
         <div class="zoom-component">
           <div class="grid-container">
@@ -495,11 +609,25 @@
             <div class="image-box zoom-preview placeholder" data-preview="4"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2><h2 class="title is-6" style="text-align: right;">(w/o</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2><h2 class="title is-6" style="text-align: left;">PSA)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/&nbsp;</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Stylized Surface</h2>
+              <h2 class="title is-6" style="text-align: right;">(w/o</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Real Captured Projection</h2>
+              <h2 class="title is-6" style="text-align: left;">PSA)</h2>
+            </div>
           </div>
         </div>
 
@@ -507,50 +635,6 @@
     </div>
   </section>
 
-  <section class="section hero is-white" id="PSA">
-    <div class="hero-body has-text-centered">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Visualization of Our Work</h2>
-
-        <div class="zoom-component">
-          <div class="video-grid-container">
-            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
-            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it California style"&nbsp;</span></h2>
-            <div class="video-box" data-index="0">
-              <video id="video1" autoplay loop muted>
-                <source src="static/PSA/video/video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <img src="static/PSA/video/surface1.jpg" alt="surface1">
-            </div>
-            <div class="video-box" data-index="1">
-              <video id="video2" autoplay loop muted>
-                <source src="static/PSA/video/video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <img src="static/PSA/video/surface1.jpg" alt="surface1">
-            </div>
-            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it night city"&nbsp;</span></h2>
-            <h2 class="title is-6" style="font-size: 1vw; margin-bottom: 0rem;">Text prompt: <span style="border: 1px solid black;">&nbsp;"make it Van Goph style"&nbsp;</span></h2>
-            <div class="video-box" data-index="2">
-              <video id="video3" autoplay loop muted>
-                <source src="static/PSA/video/video3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <img src="static/PSA/video/surface1.jpg" alt="surface1">
-            </div>
-            <div class="video-box" data-index="3">
-              <video id="video4" autoplay loop muted>
-                <source src="static/PSA/video/video4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <img src="static/PSA/video/surface2.jpg" alt="surface2">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Youtube video -->
   <!-- <section class="hero is-small is-light">
     <div class="hero-body">
@@ -621,7 +705,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-<pre><code>@ARTICLE{Deng2025LAPIG,
+      <pre><code>@ARTICLE{Deng2025LAPIG,
   author  = {Deng, Yuchen and Ling, Haibin and Huang, Bingyao},
   journal = {IEEE Transactions on Visualization and Computer Graphics (in press)},
   title   = {LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization},
@@ -661,7 +745,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1FHRENB96"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-N1FHRENB96');
@@ -682,7 +766,7 @@
 
         box.addEventListener('mousemove', (e) => {
           if (!isHovering) return;
-          
+
           // 获取当前悬停盒子的尺寸和位置
           const rect = e.target.getBoundingClientRect();
           const xPercent = (e.clientX - rect.left) / rect.width;
@@ -699,7 +783,7 @@
           boxes.forEach((b, index) => {
             const preview = component.querySelector(`[data-preview="${index}"]`);
             const imgSrc = b.querySelector('img').src;
-            
+
             preview.style.backgroundImage = `url(${imgSrc})`;
             preview.classList.remove('placeholder');
             preview.style.backgroundPosition =
@@ -719,12 +803,12 @@
     });
   </script>
   <script>
-    window.onload = function() {
+    window.onload = function () {
       const videos = document.querySelectorAll('video');
 
       // 确保所有视频在加载时是同步的
       videos.forEach(video => {
-        video.addEventListener('play', function() {
+        video.addEventListener('play', function () {
           videos.forEach(otherVideo => {
             if (otherVideo !== video && otherVideo.paused) {
               otherVideo.play();  // 如果其他视频暂停，开始播放
@@ -733,7 +817,7 @@
         });
 
         // 在视频结束时自动循环播放
-        video.addEventListener('ended', function() {
+        video.addEventListener('ended', function () {
           video.currentTime = 0;  // 重置到视频开头
           video.play();  // 重新播放
         });
