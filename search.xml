@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</title>
+    <url>/20240820/LAPIG/</url>
+    <content><![CDATA[<p><img src="/LAPIG.jpg"></p>
+]]></content>
+      <categories>
+        <category>project</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/20240818/hello-world/</url>
     <content><![CDATA[<p>Start from here.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Example</title>
-    <url>/20240820/example/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>project</category>
-      </categories>
   </entry>
 </search>
