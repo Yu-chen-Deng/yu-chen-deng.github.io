@@ -1,0 +1,383 @@
+/* --- 保持原有的基础样式不变 --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap');
+
+:root {
+  /* Default (Light) Colors */
+  --color-text-primary: #373633;
+  --color-text-secondary: #AFAEA9;
+  --color-background: #ffffff;
+  --line-primary: 4px;
+  --line-secondary: 2px;
+  --margin-l-0: 24px;
+  --margin-l-1: 16px;
+  --margin-l-2: 8px;
+  --margin-primary: 16px;
+  --font-family-body: 'Inter', sans-serif;
+
+  /* 基础字号还原 */
+  font-size: 18px;
+}
+
+html.dark {
+  --color-text-primary: #E8E8E8;
+  --color-text-secondary: #7D7C78;
+  --color-background: #1c1c1c;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+/* --- 布局核心 (Media Styl 还原) --- */
+
+/* 1. 限制内容容器宽度并居中 */
+.flex-container {
+  position: relative;
+  width: 720px; /* 核心宽度 */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 2. 左侧悬挂逻辑 */
+/* 注意：这里对应 .personal-info 组件的样式 */
+.personal-info {
+  position: absolute;
+  /* 计算逻辑：利用负 margin 或 left 定位到容器左侧的留白区 */
+  /* left = (容器宽 - 视口宽) / 2 */
+  width: calc((100vw - 720px) / 2);
+  left: calc((720px - 100vw) / 2);
+  top: 0; /* 确保顶部对齐 */
+  text-align: right; /* 让内容靠右，紧贴主容器 */
+  padding-right: 36px; /* 与主内容的间距 */
+  box-sizing: border-box;
+}
+
+/* --- 响应式断点 (还原 media.styl) --- */
+
+@media (max-width: 1600px) {
+  html { font-size: 18px; }
+  .flex-container { width: 720px; }
+  .personal-info {
+    width: calc((100vw - 720px) / 2);
+    left: calc((720px - 100vw) / 2);
+  }
+}
+
+@media (max-width: 1200px) {
+  html { font-size: 18px; }
+  .flex-container { width: 640px; }
+  .personal-info {
+    width: calc((100vw - 640px) / 2);
+    left: calc((640px - 100vw) / 2);
+  }
+}
+
+/* 当屏幕小于 1100px 时，隐藏左侧悬挂信息 */
+@media (max-width: 1100px) {
+  .personal-info {
+    display: none;
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 688px) {
+  .flex-container {
+    display: block;
+    width: calc(100% - 48px);
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  /* 移动端如果有需要显示 personal-info 的话，通常会改为流式布局，
+     但在原版 media.styl 中它在 1100px 以下就被隐藏了。
+     如果你希望移动端显示，需要在这里重写 display: block 和 position: static */
+}
+
+
+/* --- Personal Info 组件内部样式 (还原 personal_info.styl) --- */
+
+.personal-info-image {
+  width: 80%;
+  /* padding-left: 20%;  原版有这个，但在绝对定位下可能需要根据实际微调，先保留 */
+  margin-left: auto; /* 配合 flex/block 靠右 */
+}
+
+.personal-info-img {
+  display: block;
+  width: 120px;
+  border-radius: 60px;
+  margin: 0 auto; /* 图片居中 */
+  transition: opacity 0.3s;
+}
+
+/* 图片悬停切换核心逻辑 */
+.personal-info-image:hover .personal-info-img {
+  /* 确保 yuchen_vs.jpg 在 docs/public/ 目录下 */
+  content: url('/yuchen_vs.jpg'); 
+}
+
+.personal-info-link {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.personal-info-link-list {
+  width: 120px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.profile {
+    padding-bottom: 36px;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 3%;
+}
+
+.profile-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.link-item {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  text-align: left; /* 链接文字左对齐 */
+}
+
+
+/* --- 其他基础样式 (Header/Footer/Border) --- */
+
+.mask-border::before {
+  content: '';
+  width: 100%;
+  height: 100vh;
+  border: var(--line-primary) solid var(--color-text-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+/* Header */
+.header {
+  border-bottom: var(--line-secondary) solid var(--color-text-primary);
+  padding-top: var(--margin-l-0);
+  padding-bottom: var(--margin-l-2);
+  margin-bottom: var(--margin-primary);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-brand {
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-list {
+  display: flex;
+  gap: var(--margin-l-0);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: var(--line-secondary);
+  background-color: var(--color-text-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.menu-item:hover::after {
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  margin-top: var(--margin-primary);
+  border-top: var(--line-secondary) solid var(--color-text-primary);
+  padding: var(--margin-primary) 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Mobile Menu Button */
+#menu-btn { display: none; }
+
+@media (max-width: 688px) {
+  :root { --margin-primary: 1px; }
+  .header-inner { flex-wrap: wrap; }
+  #menu-btn { display: block !important; width: 50%; text-align: right; cursor: pointer; }
+  .site-brand-container { width: 50%; }
+  .site-nav { width: 100%; }
+  .menu-list {
+    height: 0; overflow: hidden; flex-direction: column; gap: 0;
+    transition: height 0.3s ease; text-align: right;
+  }
+  .menu-list.active { height: auto; margin-top: 12px; padding-bottom: 12px;}
+  .menu-item { margin-top: 8px; }
+  .menu-item::after { display: none; }
+}
+
+.profile + .profile {
+  margin-top: 36px; /* 原来是 56px，这里改小一点 */
+  padding-top: 0;
+}
+
+/* 如果不想让每个部分都有底边框，可以针对性处理 */
+/* .profile { border-bottom: none; } */
+
+
+/* 3. 项目列表样式 (Project List - 移植自 post_project.styl) */
+.post-project-list {
+  width: 100%;
+}
+
+.h-line-secondary {
+  height: 1px;
+  background-color: var(--color-text-secondary);
+  opacity: 0.3;
+  margin-top: 12px; /* margin-m-1 */
+  margin-bottom: 24px;
+}
+
+.post-project-item {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.post-project-item .post-img {
+  width: 20%;
+  flex-shrink: 0;
+  padding-right: 24px; /* margin-l-0 */
+}
+
+.post-project-item .post-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  display: block;
+}
+
+.post-project-item .post-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-project-item .post-title {
+  margin-bottom: 4px;
+  font-size: 1.125rem; /* heading-h3 ~18px */
+  font-weight: 700;
+}
+
+.post-project-item .post-title a {
+  position: relative;
+  font-weight: 700;
+}
+.post-project-item .post-title a:hover {
+  opacity: 0.7;
+}
+
+.post-author {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.post-publication {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px; /* 稍微增加一点顶部间距 */
+}
+
+/* --- 修复：圆角矩形按钮样式 --- */
+.post-tag a {
+  display: inline-block;
+  padding: 4px 12px;           /* 内边距：上下4px，左右12px */
+  border: 1px solid var(--color-text-secondary); /* 边框颜色 */
+  border-radius: 20px;         /* 圆角半径，形成胶囊形状 */
+  
+  font-size: 0.75rem;          /* ~12px */
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;       /* 去掉下划线 */
+  transition: all 0.2s ease;   /* 添加过渡动画 */
+  
+  /* 确保没有被基础样式覆盖 */
+  border-bottom: 1px solid var(--color-text-secondary); 
+}
+
+/* 悬停效果：背景变深，文字变反色 */
+.post-tag a:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-background);
+  border-color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-text-primary);
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+  .post-project-item {
+    flex-wrap: wrap;
+  }
+  .post-project-item .post-img {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+  .post-project-item .post-info {
+    width: 100%;
+  }
+}

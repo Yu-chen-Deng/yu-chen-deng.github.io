@@ -1,0 +1,15 @@
+[
+  {
+    "title": "LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization",
+    "link": "https://yu-chen-deng.github.io/LAPIG",
+    "cover": "/LAPIG-vr25.gif",
+    "author": "<mark>Yuchen Deng</mark>, Haibin Ling and Bingyao Huang",
+    "publication": "IEEE Trans. on Visualization and Computer Graphics (TVCG), 2025<br>also in IEEE Conf. on Virtual Reality and 3D User Interfaces (IEEE VR)",
+    "home": true, 
+    "links": {
+      "Project Page": "https://yu-chen-deng.github.io/LAPIG",
+      "Code": "https://github.com/Yu-chen-Deng/LAPIG",
+      "Arxiv": "https://arxiv.org/abs/2503.12173"
+    }
+  }
+]
