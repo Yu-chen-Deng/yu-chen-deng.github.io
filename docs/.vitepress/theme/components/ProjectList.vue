@@ -22,7 +22,7 @@ const displayItems = computed(() => {
   <div class="profile project-section">
     <div class="post-content profile-content">
       <div class="profile-title">
-        <span>Project</span>
+        <span>Project&nbsp;</span><span style="font-size:0.8rem;font-weight:500;"><sup>&ast;</sup>Equal contribution, <sup>&dagger;</sup>Corresponding author</span>
       </div>
       
       <div class="post-project-list">

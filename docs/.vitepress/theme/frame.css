@@ -42,7 +42,7 @@ a {
 /* 1. 限制内容容器宽度并居中 */
 .flex-container {
   position: relative;
-  width: 720px; /* 核心宽度 */
+  width: 800px; /* 核心宽度 */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -53,8 +53,8 @@ a {
   position: absolute;
   /* 计算逻辑：利用负 margin 或 left 定位到容器左侧的留白区 */
   /* left = (容器宽 - 视口宽) / 2 */
-  width: calc((100vw - 720px) / 2);
-  left: calc((720px - 100vw) / 2);
+  width: calc((100vw - 800px) / 2);
+  left: calc((800px - 100vw) / 2);
   top: 0; /* 确保顶部对齐 */
   text-align: right; /* 让内容靠右，紧贴主容器 */
   padding-right: 36px; /* 与主内容的间距 */
@@ -65,14 +65,14 @@ a {
 
 @media (max-width: 1600px) {
   html { font-size: 18px; }
-  .flex-container { width: 720px; }
+  .flex-container { width: 800px; }
   .personal-info {
-    width: calc((100vw - 720px) / 2);
-    left: calc((720px - 100vw) / 2);
+    width: calc((100vw - 800px) / 2);
+    left: calc((800px - 100vw) / 2);
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   html { font-size: 18px; }
   .flex-container { width: 640px; }
   .personal-info {
@@ -82,7 +82,7 @@ a {
 }
 
 /* 当屏幕小于 1100px 时，隐藏左侧悬挂信息 */
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
   .personal-info {
     display: none;
   }
@@ -147,6 +147,9 @@ a {
 .profile-title {
   font-size: 2rem;
   font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 .link-item {

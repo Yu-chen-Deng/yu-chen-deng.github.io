@@ -14,6 +14,9 @@
         <li class="link-item github">
           <a href="https://github.com/Yu-chen-Deng" target="_blank">Github</a>
         </li>
+        <li class="link-item scholar">
+          <a href="https://github.com/Yu-chen-Deng" target="_blank">Scholar</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -25,4 +28,5 @@
 */
 .link-item.mail { background-image: url('/icon_mail.png'); }
 .link-item.github { background-image: url('/icon_github.png'); }
+.link-item.scholar { background-image: url('/icon_scholar.png'); }
 </style>
