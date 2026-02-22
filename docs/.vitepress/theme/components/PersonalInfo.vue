@@ -15,7 +15,7 @@
           <a href="https://github.com/Yu-chen-Deng" target="_blank">Github</a>
         </li>
         <li class="link-item scholar">
-          <a href="https://github.com/Yu-chen-Deng" target="_blank">Scholar</a>
+          <a href="https://scholar.google.com/citations?user=Dtup8JcAAAAJ&hl=en" target="_blank">Scholar</a>
         </li>
       </ul>
     </div>

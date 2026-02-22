@@ -338,6 +338,21 @@ a {
   margin-bottom: 8px;
 }
 
+.post-summary {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-text-primary);
+  position: relative;
+  padding-left: 1.2em; /* 给圆点留空间 */
+}
+
+.post-summary::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-primary);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;

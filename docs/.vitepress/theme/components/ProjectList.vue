@@ -48,7 +48,9 @@ const displayItems = computed(() => {
               </div>
             </div>
           </div>
-          
+          <div>
+            <span class="post-summary" v-if="item.summary" v-html="item.summary"></span>
+          </div>
           </div>
       </div>
     </div>
