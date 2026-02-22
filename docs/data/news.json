@@ -1,10 +1,18 @@
 [
   {
+    "date": "2026-02",
+    "content": "A work on online reconstruction accepted by CVPR 2026, Congrats to Shunkai!"
+  },
+  {
+    "date": "2026-01",
+    "content": "A work accepted by IEEE VR 2026."
+  },
+  {
     "date": "2025-01",
-    "content": "Paper on AR image generation accepted by <strong>IEEE VR 2025</strong>."
+    "content": "A work on AR image generation (<a href=\"https://arxiv.org/abs/2503.12173\">pdf</a>/<a href=\"https://github.com/Yu-chen-Deng/LAPIG\">code</a>) accepted by IEEE VR 2025/TVCG."
   },
   {
     "date": "2024-02",
-    "content": "Maybe one of most moment lifetime."
+    "content": "Began research under the supervision of Prof. Bingyao Huang at Southwest University."
   }
 ]

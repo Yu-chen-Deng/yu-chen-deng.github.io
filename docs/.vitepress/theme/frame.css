@@ -121,8 +121,8 @@ a {
 
 /* 图片悬停切换核心逻辑 */
 .personal-info-image:hover .personal-info-img {
-  /* 确保 yuchen_vs.jpg 在 docs/public/ 目录下 */
-  content: url('/yuchen_vs.jpg'); 
+  /* 确保 yuchen_style.jpg 在 docs/public/ 目录下 */
+  content: url('/yuchen_style.jpg'); 
 }
 
 .personal-info-link {
