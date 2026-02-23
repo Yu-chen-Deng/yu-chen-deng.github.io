@@ -17,32 +17,113 @@ defineProps({
       </div>
       <div class="profile-body">
         <p></p>
+        <div class="news-scroll">
         <ul class="news-list">
-          <li v-for="(item, index) in (limit ? newsData.slice(0, limit) : newsData)" :key="index">
-            <strong class="news-date">{{ item.date }}:&nbsp;</strong>
-            <span v-html="item.content"></span>
+          <li
+            v-for="(item, index) in (limit ? newsData.slice(0, limit) : newsData)"
+            :key="index"
+            class="news-item"
+          >
+            <span class="news-date">{{ item.date }}</span>
+            <div class="news-content" v-html="item.content"></div>
           </li>
         </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* 继承 Profile 的布局，但针对 News 做微调 */
 .news-list {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid #e5e7eb; /* 时间轴线 */
 }
 
-.news-list li {
-  margin-top: 2px;
-  line-height: 1.25;
+.news-item {
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  transition: transform 0.15s ease;
 }
 
+.news-item:hover {
+  transform: translateX(3px);
+}
+
+/* 小圆点 */
+.news-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 50%;
+}
+
+/* 日期样式 */
 .news-date {
-  font-family: 'Roboto Mono', monospace; /* 对应 Noto Sans Mono */
+  display: block;
+  font-size: 0.8rem;
   font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.03em;
+}
+
+/* 内容样式 */
+.news-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.news-scroll {
+  position: relative;
+  max-height: 230px; /* 自行调整 */
+  overflow-y: auto;
+  padding-right: 6px; /* 防止遮挡文字 */
+  scroll-behavior: smooth;
+}
+
+.news-scroll::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.news-scroll {
+  scrollbar-width: none; /* Firefox */
+}
+
+.news-scroll::before,
+.news-scroll::after {
+  content: "";
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.news-scroll::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.news-scroll::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup>
 import { useData, withBase } from 'vitepress'
 import { ref, onMounted } from 'vue'
+import ContextMenu from './components/ContextMenu.vue'
 
 const { site, theme } = useData()
 
@@ -81,4 +82,5 @@ const toggleMenu = () => {
     </footer>
 
   </div>
+  <ContextMenu />
 </template>
