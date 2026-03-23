@@ -4,7 +4,8 @@
 <template>
   <div class="personal-info">
     <div class="personal-info-image">
-      <img src="/yuchen.jpg" alt="featured_image" class="personal-info-img">
+      <img src="/yuchen.jpg" alt="avatar" class="personal-info-img avatar-normal">
+      <img src="/yuchen_style.jpg" alt="avatar-hover" class="personal-info-img avatar-hover">
     </div>
     <div class="personal-info-link">
       <ul class="personal-info-link-list">

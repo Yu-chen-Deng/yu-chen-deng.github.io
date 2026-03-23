@@ -56,8 +56,12 @@ a {
   width: calc((100vw - 800px) / 2);
   left: calc((800px - 100vw) / 2);
   top: 0; /* 确保顶部对齐 */
-  text-align: right; /* 让内容靠右，紧贴主容器 */
-  padding-right: 36px; /* 与主内容的间距 */
+  /* 改为 Flex 布局 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+  padding-right: 3em;
   box-sizing: border-box;
 }
 
@@ -105,34 +109,50 @@ a {
 
 /* --- Personal Info 组件内部样式 (还原 personal_info.styl) --- */
 
+/* 修改容器，为内部的绝对定位提供参考 */
 .personal-info-image {
-  width: 80%;
-  /* padding-left: 20%;  原版有这个，但在绝对定位下可能需要根据实际微调，先保留 */
-  margin-left: auto; /* 配合 flex/block 靠右 */
+  position: relative;
+  width: 120px;  /* 必须指定宽度 */
+  height: 120px; /* 必须指定高度，确保容器不会塌陷 */
 }
 
+/* 基础图片样式 */
 .personal-info-img {
-  display: block;
+  position: absolute; /* 将图片重叠在一起 */
   width: 120px;
-  border-radius: 60px;
-  margin: 0 auto; /* 图片居中 */
-  transition: opacity 0.3s;
+  height: 120px;
+  border-radius: 60px; /* 保持圆角 */
+  display: block;
+  transition: opacity 0.4s ease-in-out; /* 设置平滑过渡效果 */
 }
 
-/* 图片悬停切换核心逻辑 */
-.personal-info-image:hover .personal-info-img {
-  /* 确保 yuchen_style.jpg 在 docs/public/ 目录下 */
-  content: url('/yuchen_style.jpg'); 
+/* 初始状态：Hover 图隐藏 */
+.avatar-hover {
+  opacity: 0;
+}
+
+/* 初始状态：Normal 图显示 */
+.avatar-normal {
+  opacity: 1;
+}
+
+/* 鼠标悬停时：Hover 图显示，Normal 图隐藏（可选） */
+.personal-info-image:hover .avatar-hover {
+  opacity: 1;
+}
+
+.personal-info-image:hover .avatar-normal {
+  opacity: 0; /* 如果两张图尺寸和背景完全一致，这一行也可以不写，直接覆盖 */
 }
 
 .personal-info-link {
-  width: 80%;
+  width: 120px;
   margin-top: 20px;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .personal-info-link-list {
-  width: 120px;
+  width: 100%;
   margin: 0 auto;
   list-style: none;
   padding: 0;
