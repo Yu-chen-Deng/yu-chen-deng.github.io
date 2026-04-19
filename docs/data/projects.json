@@ -7,7 +7,8 @@
     "publication": "IEEE/CVF Conf. on Computer Vision and Pattern Recognition (CVPR), 2026",
     "home": true, 
     "links": {
-      "Project Page": "https://shunkaizhou.github.io/online3r-1.0/"
+      "Project Page": "https://shunkaizhou.github.io/online3r-1.0/",
+      "Arxiv": "https://arxiv.org/abs/2604.09480"
     },
     "summary": "We improve accuracy and reduce drift by combining local and global geometric consistency losses."
   },
@@ -21,6 +22,7 @@
     "links": {
       "Project Page": "https://zimocao.github.io/ProCap",
       "Code": "https://github.com/ZimoCao/ProCap",
+      "Arxiv": "https://arxiv.org/abs/2604.00912",
       "RGBP Dataset": "https://huggingface.co/datasets/yuchendeng/RGBP"
     },
     "summary": "We present RGBP (RGB + Projections), the first large-scale SAR semantic benchmark dataset (Over 180,000 pairs)."
