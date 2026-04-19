@@ -8,9 +8,18 @@ const { site, theme } = useData()
 const isDark = ref(false)
 const isMenuOpen = ref(false)
 
+const isNight = () => {
+  const hour = new Date().getHours()
+  return hour >= 19 || hour < 6
+}
+
 onMounted(() => {
   const saved = localStorage.getItem('theme')
-  isDark.value = saved === 'dark'
+  if (saved) {
+    isDark.value = saved === 'dark'
+  } else {
+    isDark.value = isNight()
+  }
   applyTheme()
 })
 
