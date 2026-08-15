@@ -4,7 +4,9 @@ import PersonalInfo from './components/PersonalInfo.vue'
 import Profile from './components/Profile.vue'
 import News from './components/News.vue'          // 新增
 import ProjectList from './components/ProjectList.vue' // 新增
+import ArchiveList from './components/ArchiveList.vue'
 import './frame.css'
+import './markdown.css'
 
 export default {
   Layout,
@@ -13,6 +15,7 @@ export default {
     app.component('Profile', Profile)
     app.component('News', News)                 // 新增
     app.component('ProjectList', ProjectList)   // 新增
+    app.component('ArchiveList', ArchiveList)
     if (typeof window !== 'undefined') {
       window.addEventListener('contextmenu', (e) => {
         e.preventDefault()

@@ -8,7 +8,7 @@ export default defineConfig({
   // 禁用默认外观样式，完全由我们需要自定义
   appearance: false, 
 
-  cleanUrls: 'with-subfolders',
+  cleanUrls: true,
 
   head: [
     // 如果需要 favicon，可以放在 public 文件夹下并在这里引用

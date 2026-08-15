@@ -1,6 +1,10 @@
 /* --- 保持原有的基础样式不变 --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap');
 
+html {
+  scrollbar-gutter: stable;
+}
+
 :root {
   /* Default (Light) Colors */
   --color-text-primary: #373633;

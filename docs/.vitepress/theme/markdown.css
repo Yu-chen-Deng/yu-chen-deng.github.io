@@ -1,0 +1,299 @@
+/* Article typography. Scoped so homepage components keep their own styling. */
+.markdown-body {
+  --md-border: color-mix(in srgb, var(--color-text-primary) 24%, transparent);
+  --md-muted-bg: color-mix(in srgb, var(--color-text-primary) 5%, var(--color-background));
+  --md-code-bg: color-mix(in srgb, var(--color-text-primary) 8%, var(--color-background));
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  line-height: 1.25;
+  scroll-margin-top: 2rem;
+}
+
+.markdown-body h1 {
+  margin: 2.5rem 0 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: var(--line-secondary) solid var(--color-text-primary);
+  font-size: 2.35rem;
+  letter-spacing: -0.045em;
+}
+
+.markdown-body h2 {
+  margin: 2.8rem 0 1rem;
+  padding-left: 0.8rem;
+  border-left: var(--line-primary) solid var(--color-text-primary);
+  font-size: 1.65rem;
+  letter-spacing: -0.025em;
+}
+
+.markdown-body h3 {
+  margin: 2rem 0 0.8rem;
+  font-size: 1.25rem;
+}
+
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin: 1.6rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+.markdown-body .header-anchor {
+  position: absolute;
+  left: -1em;
+  opacity: 0;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+}
+
+.markdown-body h1:hover .header-anchor,
+.markdown-body h2:hover .header-anchor,
+.markdown-body h3:hover .header-anchor,
+.markdown-body h4:hover .header-anchor,
+.markdown-body h5:hover .header-anchor,
+.markdown-body h6:hover .header-anchor {
+  opacity: 0.45;
+}
+
+.markdown-body p {
+  margin: 1rem 0;
+}
+
+.markdown-body strong {
+  font-weight: 700;
+}
+
+.markdown-body a:not(.header-anchor) {
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s ease;
+}
+
+.markdown-body a:not(.header-anchor):hover {
+  opacity: 0.55;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin: 1rem 0;
+  padding-left: 1.6rem;
+}
+
+.markdown-body li {
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
+}
+
+.markdown-body li::marker {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+}
+
+.markdown-body input[type='checkbox'] {
+  margin: 0 0.5rem 0.15rem 0;
+  accent-color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.markdown-body blockquote {
+  position: relative;
+  margin: 1.8rem 0;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  border-left: var(--line-primary) solid var(--color-text-primary);
+  background: var(--md-muted-bg);
+  color: var(--color-text-primary);
+}
+
+.markdown-body blockquote::before {
+  content: '“';
+  position: absolute;
+  top: -0.55rem;
+  right: 0.65rem;
+  color: var(--color-text-secondary);
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body :not(pre) > code {
+  margin: 0 0.12em;
+  padding: 0.16em 0.38em;
+  border: 1px solid var(--md-border);
+  background: var(--md-code-bg);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.82em;
+}
+
+.markdown-body div[class*='language-'] {
+  position: relative;
+  margin: 1.6rem 0;
+  border: var(--line-secondary) solid var(--color-text-primary);
+  background: var(--md-code-bg);
+  box-shadow: 5px 5px 0 var(--color-text-secondary);
+  overflow: hidden;
+}
+
+.markdown-body div[class*='language-']::before {
+  content: '';
+  display: block;
+  height: 0.55rem;
+  border-bottom: 1px solid var(--md-border);
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 5px,
+    var(--md-border) 5px 6px
+  );
+}
+
+.markdown-body pre {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.markdown-body pre code {
+  font-family: inherit;
+}
+
+.markdown-body div[class*='language-'] > span.lang {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.75rem;
+  color: var(--color-text-secondary);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.markdown-body div[class*='language-'] > button.copy {
+  display: none;
+}
+
+.markdown-body .line.highlighted {
+  display: inline-block;
+  width: calc(100% + 2.5rem);
+  margin-left: -1.25rem;
+  padding-left: 1.25rem;
+  background: var(--md-border);
+}
+
+.markdown-body .table-wrapper {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+}
+
+.markdown-body table {
+  width: 100%;
+  margin: 1.6rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.markdown-body .table-wrapper table {
+  margin: 0;
+}
+
+.markdown-body th,
+.markdown-body td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--md-border);
+  text-align: left;
+}
+
+.markdown-body th {
+  border-color: var(--color-text-primary);
+  background: var(--color-text-primary);
+  color: var(--color-background);
+  font-weight: 600;
+}
+
+.markdown-body tr:nth-child(even) td {
+  background: var(--md-muted-bg);
+}
+
+.markdown-body hr {
+  height: var(--line-secondary);
+  margin: 2.8rem 0;
+  border: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-text-primary) 0 1.5rem,
+    transparent 1.5rem 2rem
+  );
+}
+
+.markdown-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.8rem auto;
+  border: 1px solid var(--md-border);
+}
+
+.markdown-body figure {
+  margin: 1.8rem 0;
+}
+
+.markdown-body figure img {
+  margin-bottom: 0.6rem;
+}
+
+.markdown-body figcaption {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.markdown-body kbd {
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--color-text-primary);
+  border-bottom-width: 3px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75em;
+}
+
+@media (max-width: 688px) {
+  .markdown-body {
+    font-size: 0.95rem;
+  }
+
+  .markdown-body h1 {
+    font-size: 1.9rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.4rem;
+  }
+
+  .markdown-body .header-anchor {
+    position: static;
+    margin-left: 0.35rem;
+    opacity: 0.35;
+  }
+
+  .markdown-body div[class*='language-'] {
+    box-shadow: 3px 3px 0 var(--color-text-secondary);
+  }
+}

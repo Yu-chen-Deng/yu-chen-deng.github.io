@@ -1,1 +1,7 @@
-# Hello World
+---
+title: Archive
+---
+
+# Archive
+
+<ArchiveList />

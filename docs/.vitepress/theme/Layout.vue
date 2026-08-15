@@ -1,9 +1,14 @@
 <script setup>
-import { useData, withBase } from 'vitepress'
-import { ref, onMounted } from 'vue'
+import { useData, useRoute, withBase } from 'vitepress'
+import { computed, ref, onMounted } from 'vue'
 import ContextMenu from './components/ContextMenu.vue'
 
 const { site, theme } = useData()
+const route = useRoute()
+
+const isArticlePage = computed(() =>
+  route.path.startsWith('/archive/') && route.path !== '/archive/'
+)
 
 const isDark = ref(false)
 const isMenuOpen = ref(false)
@@ -74,8 +79,8 @@ const toggleMenu = () => {
 
     <main class="main">
       <div class="flex-container">
-        <div class="vp-doc">
-          <Content />
+        <div class="vp-doc" :class="{ 'markdown-body': isArticlePage }">
+          <Content :key="route.path" />
         </div>
       </div>
     </main>
