@@ -30,3 +30,5 @@ const { frontmatter } = useData()
 <News :limit="8" />
 
 <ProjectList :onlyHome="true" />
+
+<Activity />

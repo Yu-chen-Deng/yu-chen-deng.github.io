@@ -39,7 +39,7 @@ defineProps({
   list-style: none;
   margin: 0;
   padding-left: 1.2rem;
-  border-left: 2px solid #e5e7eb; /* 时间轴线 */
+  border-left: 2px solid var(--color-divider); /* 时间轴线 */
 }
 
 .news-item {
@@ -61,7 +61,7 @@ defineProps({
   top: 6px;
   width: 8px;
   height: 8px;
-  background: #000000;
+  background: var(--color-text-secondary);
   border-radius: 50%;
 }
 
@@ -113,8 +113,8 @@ defineProps({
   top: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
+    var(--color-background),
+    transparent
   );
 }
 
@@ -122,8 +122,8 @@ defineProps({
   bottom: 0;
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
+    var(--color-background),
+    transparent
   );
 }
 </style>

@@ -10,6 +10,7 @@ html {
   --color-text-primary: #373633;
   --color-text-secondary: #AFAEA9;
   --color-background: #ffffff;
+  --color-divider: #e0e0e0;
   --line-primary: 4px;
   --line-secondary: 2px;
   --margin-l-0: 24px;
@@ -26,6 +27,7 @@ html.dark {
   --color-text-primary: #E8E8E8;
   --color-text-secondary: #7D7C78;
   --color-background: #1c1c1c;
+  --color-divider: #3a3a3a;
 }
 
 body {
@@ -164,7 +166,7 @@ a {
 
 .profile {
     padding-bottom: 36px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-divider);
     gap: 3%;
 }
 

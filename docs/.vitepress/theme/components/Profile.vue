@@ -55,7 +55,7 @@ const switchLanguage = (lang) => {
   padding-bottom: 12px; /* $margin-m-1 */
   display: flex;
   flex-direction: row-reverse; /* 关键：反向排列，让第一个子元素(图片)去右边 */
-  border-bottom: 1px solid #e0e0e0; /* silver */
+  border-bottom: 1px solid var(--color-divider);
   gap: 3%; /* 控制图片和文字的间距 */
 }
 
