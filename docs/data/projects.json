@@ -3,7 +3,14 @@
     "title": "Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model",
     "link": "https://shunkaizhou.github.io/online3r-1.0/",
     "cover": "/Online3R-cvpr26.png",
-    "author": "Shunkai Zhou, Zike Yan, Fei Xue, Dong Wu, <mark>Yuchen Deng</mark>, Hongbin Zha<sup>&dagger;</sup>",
+    "authors": [
+      {"id": "shunkai-zhou-1"},
+      {"id": "zike-yan-1"},
+      {"id": "fei-xue-1"},
+      {"id": "dong-wu-1"},
+      {"id": "yuchen-deng-1", "highlight": true},
+      {"id": "hongbin-zha-1", "corresponding": true}
+    ],
     "publication": "IEEE/CVF Conf. on Computer Vision and Pattern Recognition (CVPR), 2026",
     "home": true, 
     "links": {
@@ -16,7 +23,12 @@
     "title": "ProCap: Projection-Aware Captioning for Spatial Augmented Reality",
     "link": "https://zimocao.github.io/ProCap",
     "cover": "/ProCap-vr26.png",
-    "author": "Zimo Cao<sup>*</sup>, <mark>Yuchen Deng<sup>*</sup></mark>, Haibin Ling, Bingyao Huang<sup>&dagger;</sup>",
+    "authors": [
+      {"id": "zimo-cao-1", "equalContribution": true},
+      {"id": "yuchen-deng-1", "highlight": true, "equalContribution": true},
+      {"id": "haibin-ling-1"},
+      {"id": "bingyao-huang-1", "corresponding": true}
+    ],
     "publication": "IEEE Conf. on Virtual Reality and 3D User Interfaces (IEEE VR), 2026",
     "home": true, 
     "links": {
@@ -31,7 +43,11 @@
     "title": "LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization",
     "link": "https://yu-chen-deng.github.io/LAPIG",
     "cover": "/LAPIG-vr25.gif",
-    "author": "<mark>Yuchen Deng</mark>, Haibin Ling, Bingyao Huang<sup>&dagger;</sup>",
+    "authors": [
+      {"id": "yuchen-deng-1", "highlight": true},
+      {"id": "haibin-ling-1"},
+      {"id": "bingyao-huang-1", "corresponding": true}
+    ],
     "publication": "IEEE Trans. on Visualization and Computer Graphics (TVCG), 2025<br>also in IEEE Conf. on Virtual Reality and 3D User Interfaces (IEEE VR)",
     "home": true, 
     "links": {

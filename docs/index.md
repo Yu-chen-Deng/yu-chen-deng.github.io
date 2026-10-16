@@ -6,7 +6,7 @@ profile:
   title: About me
   title_zh: 关于我
   body: |
-    <p>Here is Yuchen Deng (Kieth, 邓宇宸). I am a junior at the School of Computer and Information Science at Southwest University.</p> 
+    <p>Here is Yuchen Deng (Kieth, 邓宇宸). I am a senior at the School of Computer and Information Science at Southwest University.</p> 
     <p>My research interests include Generative Model, 3D Reconstruction, and Spatial Augmented Reality. Also, Lateral Thinking with Withered Technology inspires my research exploration.</p>
     <p>If you are interested in any aspect of me, I would love to chat and collaborate, please email me at - ydeng714 AT gmail DOT com</p>
   body_zh: |
