@@ -18,6 +18,9 @@
         <li class="link-item scholar">
           <a href="https://scholar.google.com/citations?user=Dtup8JcAAAAJ&hl=en" target="_blank">Scholar</a>
         </li>
+        <li class="link-item huggingface">
+          <a href="https://huggingface.co/yuchendeng" target="_blank" rel="noopener noreferrer">HF</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -30,4 +33,5 @@
 .link-item.mail { background-image: url('/icon_mail.png'); }
 .link-item.github { background-image: url('/icon_github.png'); }
 .link-item.scholar { background-image: url('/icon_scholar.png'); }
+.link-item.huggingface { background-image: url('/icon_huggingface.png'); }
 </style>

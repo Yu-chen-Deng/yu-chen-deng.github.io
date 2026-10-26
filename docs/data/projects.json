@@ -1,5 +1,38 @@
 [
-    {
+  {
+    "title": "SREdit: Scene Response Guided Appearance Editing for Projection Mapping",
+    "link": "#",
+    "cover": "/SREdit-arxiv26.png",
+    "authors": [
+      {"id": "yuqiao-xia-1"},
+      {"id": "yuchen-deng-1", "highlight": true},
+      {"id": "ziheng-chang-1"},
+      {"id": "bingyao-huang-1", "corresponding": true}
+    ],
+    "publication": "Arxiv, 2026",
+    "home": true, 
+    "links": {
+      "Arxiv": "https://arxiv.org/abs/2610.21282"
+    }
+  },
+  {
+    "title": "LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality",
+    "link": "#",
+    "cover": "/LICOA-arxiv26.png",
+    "authors": [
+      {"id": "yuchen-deng-1", "highlight": true},
+      {"id": "shunkai-zhou-1"},
+      {"id": "ruixuan-zhu-1"},
+      {"id": "haibin-ling-1"},
+      {"id": "bingyao-huang-1", "corresponding": true}
+    ],
+    "publication": "Arxiv, 2026",
+    "home": true, 
+    "links": {
+      "Arxiv": "https://arxiv.org/abs/2610.21282"
+    }
+  },
+  {
     "title": "Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model",
     "link": "https://shunkaizhou.github.io/online3r-1.0/",
     "cover": "/Online3R-cvpr26.png",

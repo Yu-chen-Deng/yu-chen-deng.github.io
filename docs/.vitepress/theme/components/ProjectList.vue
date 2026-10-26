@@ -54,7 +54,7 @@ const displayItems = computed(() => {
                 <template v-for="(author, authorIndex) in getAuthors(item.authors)" :key="author.id">
                   <template v-if="authorIndex > 0">, </template>
                   <component :is="author.url ? 'a' : 'span'" :href="author.url || undefined" :target="author.url ? '_blank' : undefined" :rel="author.url ? 'noopener noreferrer' : undefined">
-                    <component :is="author.highlight ? 'mark' : 'span'">{{ author.name }}<sup v-if="author.equalContribution || author.corresponding">{{ author.equalContribution ? '*' : '' }}{{ author.corresponding ? '†' : '' }}</sup></component>
+                    <span :class="{ 'author-highlight': author.highlight }">{{ author.name }}<sup v-if="author.equalContribution || author.corresponding">{{ author.equalContribution ? '*' : '' }}{{ author.corresponding ? '†' : '' }}</sup></span>
                   </component>
                 </template>
               </span>
@@ -75,3 +75,15 @@ const displayItems = computed(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.author-highlight {
+  padding-bottom: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='6' viewBox='0 0 54 6'%3E%3Cpath d='M0 3 C5 .6 9 5.4 15 3 S24 .7 30 3 S39 5 45 2.8 S51 1.3 54 3' fill='none' stroke='%23e9ab30' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 54px 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+</style>
