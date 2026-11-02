@@ -215,6 +215,11 @@ a {
 
 /* Header */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  flex-shrink: 0;
+  background-color: var(--color-background);
   border-bottom: var(--line-secondary) solid var(--color-text-primary);
   padding-top: var(--margin-l-0);
   padding-bottom: var(--margin-l-2);
@@ -463,4 +468,63 @@ a {
 
 .context-item:hover::after {
   width: calc(100% - 32px);
+}
+
+/* Center the error page in the space between the header and footer. */
+.main-not-found {
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  box-sizing: border-box;
+}
+
+.not-found {
+  max-width: 440px;
+  text-align: center;
+}
+
+.not-found-code {
+  margin: 0;
+  padding-bottom: var(--margin-l-1);
+  border-bottom: var(--line-secondary) solid var(--color-text-primary);
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.not-found h1 {
+  margin: var(--margin-l-0) 0 var(--margin-l-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.not-found-description {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.not-found-link {
+  position: relative;
+  display: inline-block;
+  margin-top: var(--margin-l-0);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.not-found-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: var(--line-secondary);
+  background-color: var(--color-text-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.not-found-link:hover::after,
+.not-found-link:focus-visible::after {
+  width: 100%;
 }

@@ -3,7 +3,7 @@ import { useData, useRoute, withBase } from 'vitepress'
 import { computed, ref, onMounted } from 'vue'
 import ContextMenu from './components/ContextMenu.vue'
 
-const { site, theme } = useData()
+const { site, theme, page } = useData()
 const route = useRoute()
 
 const isArticlePage = computed(() =>
@@ -77,8 +77,14 @@ const toggleMenu = () => {
       </div>
     </header>
 
-    <main class="main">
-      <div class="flex-container">
+    <main class="main" :class="{ 'main-not-found': page.isNotFound }">
+      <div v-if="page.isNotFound" class="not-found">
+        <p class="not-found-code">404</p>
+        <h1>Page not found</h1>
+        <p class="not-found-description">The page you're looking for doesn't exist or has moved.</p>
+        <a class="not-found-link" :href="withBase('/')">Back to home</a>
+      </div>
+      <div v-else class="flex-container">
         <div class="vp-doc" :class="{ 'markdown-body': isArticlePage }">
           <Content :key="route.path" />
         </div>

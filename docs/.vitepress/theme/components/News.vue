@@ -81,6 +81,13 @@ defineProps({
   line-height: 1.5;
 }
 
+.news-content :deep(a) {
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-secondary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
 .news-scroll {
   position: relative;
   max-height: 230px; /* 自行调整 */
